@@ -39,6 +39,7 @@ GetPellet() {
 PelletHolderInitialise() {
     //Declarations
     int i;
+    int x;
     int pellets[15];
     int emtpy;
 
@@ -50,7 +51,9 @@ PelletHolderInitialise() {
     }
 
     //Returns the array to ensure we can use it elsewhere
-    return pellets[15];
+    for (x = 0; x++; x > 14) {
+        return pellets[x];
+    }
 }
 
 PelletHolderUpdate(int pellets[], int pelLoc) {
