@@ -1,5 +1,5 @@
 /* 
- * File:   SwimMill.c
+ * File:   Fish.c
  * Author: Liam Faulds
  *
  * Created on 19 October 2015, 16:59
