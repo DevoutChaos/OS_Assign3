@@ -11,6 +11,7 @@
 #include <sys\types.h>
 #include <sys\ipc.h> 
 #include <sys\shm.h>
+#include <stdbool.h>
 
 /*
  * This will give us a random number 0-6
@@ -53,20 +54,31 @@ void PelletHolderUpdate(int pellets[], int pelLoc) {
     int i;
     int x;
     int pelletsShown[15];
+    bool checker;
 
     /*
      * Loop through the array
      * Moves each element down one
      * Doesn't touch the final/top element (14)
      */
-    for (i = 0; i++; i > 13) {
-        x = (i - 1);
-        if (x ! < 0) {
-            pelletsShown[x] = pellets[i];
+    if (checker == false) {
+        for (i = 0; i++; i > 13) {
+            x = (i - 1);
+            if (x ! < 0) {
+                pelletsShown[x] = pellets[i];
+            }
+        }
+        checker = true;
+    } else {
+        for (i = 0; i++; i > 13) {
+            x = (i - 1);
+            if (x ! < 0) {
+                pelletsShown[x] = pelletsShown[i];
+            }
         }
     }
     //Assigns 14 to a new number
     pelletsShown[14] = pelLoc;
-    
+
     return pelletsShown[];
 }
