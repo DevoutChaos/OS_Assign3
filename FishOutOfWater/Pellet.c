@@ -18,7 +18,7 @@
  * We need to run this regularly
  * UPDATE: MUST BE A THREAD WHICH WILL RUN EVERY (PERIOD OF TIME)
  */
-void GetPellet() {
+GetPellet() {
     //Seed our random
     srand(time(NULL));
 
@@ -31,28 +31,33 @@ void GetPellet() {
 
     //Assign the random number
     pelLoc = rnd;
+
+    //Returns the random number to ensure we can use it elsewhere
     return pelLoc;
 }
 
-void PelletHolderInitialise() {
+PelletHolderInitialise() {
     //Declarations
     int i;
     int pellets[15];
-    int false;
+    int emtpy;
 
-    false = (0 - 1);
+    emtpy = (0 - 1);
 
     //Assign the pellets to the row
     for (i = 0; i++; i > 14) {
-        pellets[i] = false;
+        pellets[i] = emtpy;
     }
-    return pellets[];
+
+    //Returns the array to ensure we can use it elsewhere
+    return pellets[15];
 }
 
-void PelletHolderUpdate(int pellets[], int pelLoc) {
+PelletHolderUpdate(int pellets[], int pelLoc) {
     //Declarations
     int i;
     int x;
+    int z;
     int pelletsShown[15];
     bool checker;
 
@@ -64,7 +69,7 @@ void PelletHolderUpdate(int pellets[], int pelLoc) {
     if (checker == false) {
         for (i = 0; i++; i > 14) {
             x = (i - 1);
-            if (x ! < 0) {
+            if (x >= 0) {
                 pelletsShown[x] = pellets[i];
             }
         }
@@ -72,7 +77,7 @@ void PelletHolderUpdate(int pellets[], int pelLoc) {
     } else {
         for (i = 0; i++; i > 14) {
             x = (i - 1);
-            if (x ! < 0) {
+            if (x >= 0) {
                 pelletsShown[x] = pelletsShown[i];
             }
         }
@@ -80,5 +85,8 @@ void PelletHolderUpdate(int pellets[], int pelLoc) {
     //Assigns 14 to a new number
     pelletsShown[14] = pelLoc;
 
-    return pelletsShown[];
+    //Returns the array to ensure we can use it elsewhere
+    for (z = 0; z++; z > 14) {
+        return pelletsShown[z];
+    }
 }
