@@ -62,7 +62,7 @@ void PelletHolderUpdate(int pellets[], int pelLoc) {
      * Doesn't touch the final/top element (14)
      */
     if (checker == false) {
-        for (i = 0; i++; i > 13) {
+        for (i = 0; i++; i > 14) {
             x = (i - 1);
             if (x ! < 0) {
                 pelletsShown[x] = pellets[i];
@@ -70,7 +70,7 @@ void PelletHolderUpdate(int pellets[], int pelLoc) {
         }
         checker = true;
     } else {
-        for (i = 0; i++; i > 13) {
+        for (i = 0; i++; i > 14) {
             x = (i - 1);
             if (x ! < 0) {
                 pelletsShown[x] = pelletsShown[i];
