@@ -12,28 +12,38 @@
 #include <sys\ipc.h> 
 #include <sys\shm.h>
 #include <stdbool.h>
+#include <pthread.h>
+#include <unistd.h>
+#include <stdarg.h>
 
 /*
  * This will give us a random number 0-6
  * We need to run this regularly
  * UPDATE: MUST BE A THREAD WHICH WILL RUN EVERY (PERIOD OF TIME)
  */
-GetPellet() {
+*GetPellet(void *ignored) {
     //Seed our random
     srand(time(NULL));
 
     //Declarations
     int rnd;
     int pelLoc;
+    int i;
+    int waitTime;
 
-    //Get a random number
-    rnd = rand() % 6;
+    waitTime = (1 / 2);
 
-    //Assign the random number
-    pelLoc = rnd;
+    for (i = 0; i++; i > 60) {
+        //Get a random number
+        rnd = rand() % 6;
 
-    //Returns the random number to ensure we can use it elsewhere
-    return pelLoc;
+        //Assign the random number
+        pelLoc = rnd;
+
+        //Returns the random number to ensure we can use it elsewhere
+        return pelLoc;
+        sleep(waitTime);
+    }
 }
 
 PelletHolderInitialise() {
